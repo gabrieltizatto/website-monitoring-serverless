@@ -1,3 +1,27 @@
+## Usage
+
+```hcl
+module "lambda_website_monitoring" {
+  source = "git@github.com:gabrieltizatto/website-monitoring-serverless.git"
+
+  function_name    = "lambda-website-monitoring"
+  sender_email     = "no-reply@mydomain.com"
+  recipient_emails = ["myemail1@gmail.com", "myemail2@gmail.com"]
+  websites = [
+    { 
+      name = "Website 1"
+      url  = "https://website1.com"
+    },
+    {
+      name = "Website 2"
+      url  = "https://website2.com"
+    }
+  ]
+
+  monitoring_rate = "rate(5 minutes)"
+}
+
+
 ## Requirements
 
 No requirements.
