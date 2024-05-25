@@ -20,6 +20,7 @@ module "lambda_website_monitoring" {
 
   monitoring_rate = "rate(5 minutes)"
 }
+```
 
 
 ## Requirements
